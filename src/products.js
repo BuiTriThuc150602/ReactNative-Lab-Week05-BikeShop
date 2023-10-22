@@ -10,31 +10,15 @@ import {
 import React, { useState } from "react";
 import { useFonts } from "expo-font";
 
-const Products = () => {
+const Products = ({ navigation }) => {
   const productsData = require("../data/bikes.json");
   const [selectedButton, setSelectedButton] = useState("All");
+  const [like, setSelectedLike] = useState(true);
   useFonts({
     "Ubuntu-Regular": require("../assets/fonts/Ubuntu-Regular.ttf"),
     "Voltaire-Regular": require("../assets/fonts/Voltaire-Regular.ttf"),
   });
 
-  const renderItems = ({ item }) => {
-    return (
-      <View style={styles.items}>
-        <View>
-          <Image
-            style={styles.img}
-            source={require("../img/" + item.image)}
-            resizeMode="contain"
-          />
-        </View>
-        <View>
-          <Text style={{color:'#00000099',fontFamily:'Voltaire-Regular',fontSize:20,fontWeight:400}}>{item.name}</Text>
-          <Text style={{color:'#000000',fontFamily:'Voltaire-Regular',fontSize:20,fontWeight:400}}><Text style={{color:'#F7BA83'}}>&#36;</Text>{item.price}</Text>
-        </View>
-      </View>
-    );
-  };
   const getButtonStyle = (button) => {
     return {
       width: 99,
@@ -47,6 +31,70 @@ const Products = () => {
       justifyContent: "center",
       fontFamily: "Voltaire-Regular",
     };
+  };
+  const getStyleForIcon = () => {
+    return {
+      width: 25,
+      height: 25,
+      zIndex: 10,
+      marginLeft: -10,
+      opacity: like ? 1 : 0.3,
+    };
+  };
+
+  const renderItems = ({ item }) => {
+    return (
+      <View style={styles.items}>
+        <Pressable
+          onPress={() => {
+            navigation.navigate("Detail", { product: item });
+          }}
+        >
+          <View>
+            <Pressable
+              style={getStyleForIcon()}
+              onPress={() => setSelectedLike(!like)}
+            >
+              <Image
+                style={styles.icon}
+                source={require("../img/icons_heart.png")}
+                resizeMode="contain"
+              />
+            </Pressable>
+            <Image
+              style={styles.img}
+              source={require("../img/" + item.image)}
+              resizeMode="contain"
+            />
+          </View>
+          <View>
+            <Text
+              style={{
+                color: "#00000099",
+                fontFamily: "Voltaire-Regular",
+                fontSize: 20,
+                fontWeight: 400,
+                textAlign: "center",
+              }}
+            >
+              {item.name}
+            </Text>
+            <Text
+              style={{
+                color: "#000000",
+                fontFamily: "Voltaire-Regular",
+                fontSize: 20,
+                fontWeight: 400,
+                textAlign: "center",
+              }}
+            >
+              <Text style={{ color: "#F7BA83" }}>&#36;</Text>
+              {item.price}
+            </Text>
+          </View>
+        </Pressable>
+      </View>
+    );
   };
 
   return (
@@ -72,7 +120,7 @@ const Products = () => {
           Mountain
         </Pressable>
       </View>
-      <SafeAreaView style={{width:"100vw"}}>
+      <SafeAreaView style={{ width: "100vw" }}>
         <FlatList
           data={productsData}
           renderItem={renderItems}
@@ -92,6 +140,12 @@ const styles = StyleSheet.create({
   img: {
     width: 135,
     height: 127,
+    zIndex: -1,
+    marginTop:-30
+  },
+  icon: {
+    width: 25,
+    height: 25,
   },
   button: {
     flexDirection: "row",
@@ -107,16 +161,15 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     marginLeft: 15,
   },
-  items:{
+  items: {
     width: "45%",
     height: 200,
-    backgroundColor :'#F7BA8326',
-    justifyContent :'center',
-    alignItems:'center',
-    margin:10,
-    borderRadius:10
+    backgroundColor: "#F7BA8326",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: 10,
+    borderRadius: 10,
   },
-  
 });
 
 export default Products;
