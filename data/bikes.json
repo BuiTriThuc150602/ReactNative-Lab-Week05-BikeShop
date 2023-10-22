@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "image":"bifour.png",
+    "name": "Pinarello",
+    "price": 1800,
+    "description": "It is a very important form of writing as we write almost everything in paragraphs, be it an answer, essay, story, emails, etc.",
+    "discount":0.15,
+    "like":false,
+    "model":"mountain"
+  },
+  {
+    "id": 2,
+    "image":"bione.png",
+    "name": "Pina Mountai",
+    "price": 1700,
+    "description": "It is a very important form of writing as we write almost everything in paragraphs, be it an answer, essay, story, emails, etc.",
+    "discount":0.15,
+    "like":true,
+    "model":"mountain"
+  },
+  {
+    "id": 3,
+    "image":"bithree.png",
+    "name": "Pina Bike",
+    "price": 1500,
+    "description": "It is a very important form of writing as we write almost everything in paragraphs, be it an answer, essay, story, emails, etc.",
+    "discount":0.15,
+    "like":true,
+    "model":"roadbike"
+  },
+  {
+    "id": 4,
+    "image":"bitwo.png",
+    "name": "Pinarello",
+    "price": 1900,
+    "description": "It is a very important form of writing as we write almost everything in paragraphs, be it an answer, essay, story, emails, etc.",
+    "discount":0.15,
+    "like":true,
+    "model":"roadbike"
+  },
+  {
+    "id": 5,
+    "image":"bithree.png",
+    "name": "Pinarello",
+    "price": 2700,
+    "description": "It is a very important form of writing as we write almost everything in paragraphs, be it an answer, essay, story, emails, etc.",
+    "discount":0.15,
+    "like":true,
+    "model":"roadbike"
+  },
+  {
+    "id": 6,
+    "image":"bione.png",
+    "name": "Pinarello",
+    "price": 1350,
+    "description": "It is a very important form of writing as we write almost everything in paragraphs, be it an answer, essay, story, emails, etc.",
+    "discount":0.15,
+    "like":true,
+    "model":"mountain"
+  }
+]
