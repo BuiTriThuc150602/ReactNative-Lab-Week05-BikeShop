@@ -8,13 +8,13 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        {/* <Stack.Screen
+        <Stack.Screen
         name="Home"
         component={Home}
         options={{
           headerShown : false
         }}
-        /> */}
+        />
         <Stack.Screen
         name="Products"
         component={Products}

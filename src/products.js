@@ -42,7 +42,7 @@ const Products = () => {
       borderWidth: 1,
       borderRadius: 5,
       borderColor: "#E9414187",
-      color: button === selectedButton ? "#E9414187" : "#ccc",
+      color: button === selectedButton ? "red" : "#ccc",
       textAlign: "center",
       justifyContent: "center",
       fontFamily: "Voltaire-Regular",
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     lineHeight: 30,
     fontFamily: "Ubuntu-Regular",
     fontWeight: 700,
-    marginTop: 50,
+    marginBottom: 30,
     marginLeft: 15,
   },
   items:{
